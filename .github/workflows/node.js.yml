@@ -32,3 +32,9 @@ jobs:
 
     - name: Build
       run: npm run build
+    - name: Install SSH Key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }} 
+    - name: Check key
+      run: cd /.ssh && ls
